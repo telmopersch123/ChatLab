@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/emoji-mart@5.6.0/dist/browser.css">
+  <title>ChatLab</title>
+</head>
+
+<body>
+  <div class="chat-container chat-container-wrapper">
+    <header>
+      <div class="header-buttons">
+        <button class="icons" id="fullscreen">
+          <svg width="24" height="24">
+            <use href="/img/icons.svg#fullscreen"></use>
+          </svg>
+        </button>
+        <button class="icons" id="themes-toggle">
+          <svg width="24" height="24">
+            <use href="/img/icons.svg#wallpaper"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="title">
+        <h2>💬 ChatLab</h2>
+        <span class="online-indicator">
+          <span class="pulse"></span>
+          <span class="online-count" id="online-count">0</span>
+        </span>
+        <div class="view-users">
+          <div class="view-users-wrapper">
+
+          </div>
+        </div>
+      </div>
+
+    </header>
+    <div id="chat">
+      <ul id="messages"></ul>
+      <div class="icons-div-flex">
+        <button type="button" class="icons img" id="image-button" title="Enviar Imagem">
+          <svg width="24" height="24">
+            <use href="/img/icons.svg#image"></use>
+          </svg>
+        </button>
+        <button type="button" class="icons img" id="video-button" title="Enviar Vídeo">
+          <svg width="24" height="24">
+            <use href="/img/icons.svg#video"></use>
+          </svg>
+        </button>
+      </div>
+      <form id="form">
+        <div class="input-container">
+          <textarea id="input" placeholder="Digite sua mensagem..."></textarea>
+          <div class="emoji-container">
+            <button type="button" id="emoji-toggle" title="Abrir emojis">😊</button>
+          </div>
+          <div class="icons-container">
+            <button type="button" class="icons openDiv" title="Abrir opções">
+              <svg width="24" height="24">
+                <use href="/img/icons.svg#chevron-down"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <input type="file" id="video-input" accept="video/mp4,video/webm" style="display: none;" />
+        <input type="file" id="image-input" accept="image/*" style="display: none;" />
+        <button>Enviar</button>
+      </form>
+      <div class="emoji-panel" id="emoji-panel"></div>
+    </div>
+    <div class="themes-panel">
+      <div class="themes-header">
+        <h3>🎨 Escolha seu Tema</h3>
+        <button class="close-themes">✕</button>
+      </div>
+      <h2 class="subtitle">Para Mobile</h2>
+      <div class="themes-grid">
+        <div class="theme-card" data-image="https://i.pinimg.com/1200x/94/65/d3/9465d39cbdcee717aa6062bc1cc144d8.jpg">
+          <img src="https://i.pinimg.com/1200x/94/65/d3/9465d39cbdcee717aa6062bc1cc144d8.jpg" alt="Tema 1">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Fundo Verde</div>
+        </div>
+        <div class="theme-card" data-image="https://i.pinimg.com/736x/ff/8f/91/ff8f91cab4db245aaed01ab2b7bec368.jpg">
+          <img src="https://i.pinimg.com/736x/ff/8f/91/ff8f91cab4db245aaed01ab2b7bec368.jpg" alt="Tema 2">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Desenho Japonês/Montanhas</div>
+        </div>
+        <div class="theme-card" data-image="https://i.pinimg.com/736x/9e/b0/72/9eb072a1e0e36b464c2f2c3b74c53230.jpg">
+          <img src="https://i.pinimg.com/736x/9e/b0/72/9eb072a1e0e36b464c2f2c3b74c53230.jpg" alt="Tema 3">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Desenho Japonês/Céu Noturno</div>
+        </div>
+        <div class="theme-card" data-image="https://i.pinimg.com/736x/cf/9e/19/cf9e198f8161bb7a543094378e5676df.jpg">
+          <img src="https://i.pinimg.com/736x/cf/9e/19/cf9e198f8161bb7a543094378e5676df.jpg" alt="Tema 4">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Morte</div>
+        </div>
+        <div class="theme-card" data-image="https://i.pinimg.com/736x/60/1d/42/601d42c3471114b121f3ecee75ff6b69.jpg">
+          <img src="https://i.pinimg.com/736x/60/1d/42/601d42c3471114b121f3ecee75ff6b69.jpg" alt="Tema 5">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Desenho Japonês/Onda Gigante</div>
+        </div>
+        <div class="theme-card" data-image="https://i.pinimg.com/736x/52/4d/85/524d85510e9c6847b3ce8e3687a827c6.jpg">
+          <img src="https://i.pinimg.com/736x/52/4d/85/524d85510e9c6847b3ce8e3687a827c6.jpg" alt="Tema 6">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Fundo Preto</div>
+        </div>
+        <div class="theme-card" data-image="https://i.pinimg.com/736x/da/81/f2/da81f2d67f30ac17481cd516b3a8d86b.jpg">
+          <img src="https://i.pinimg.com/736x/da/81/f2/da81f2d67f30ac17481cd516b3a8d86b.jpg" alt="Tema 7">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Obra De Arte</div>
+        </div>
+        <div class="theme-card" data-image="https://i.pinimg.com/736x/fe/ea/a6/feeaa67fa87c610ce07ff47a3eb72e4c.jpg">
+          <img src="https://i.pinimg.com/736x/fe/ea/a6/feeaa67fa87c610ce07ff47a3eb72e4c.jpg" alt="Tema 8">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Céu Angelical</div>
+        </div>
+        <div class="theme-card" data-image="https://i.pinimg.com/736x/bc/bf/f4/bcbff418ca4422d922fcca4086359790.jpg">
+          <img src="https://i.pinimg.com/736x/bc/bf/f4/bcbff418ca4422d922fcca4086359790.jpg" alt="Tema 9">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Entardecer</div>
+        </div>
+        <div class="theme-card" data-image="https://i.pinimg.com/736x/44/87/04/44870419ec31b3505eedec7b0606b60b.jpg">
+          <img src="https://i.pinimg.com/736x/44/87/04/44870419ec31b3505eedec7b0606b60b.jpg" alt="Tema 10">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Desenho/Paisagem Natural</div>
+        </div>
+      </div>
+      <h2 class="subtitle">Para Desktop</h2>
+      <div class="themes-grid">
+        <div class="theme-card" data-image="/img/fullscreen1.jpg">
+          <img src="/img/fullscreen1.jpg" alt="Tema 2">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Montanhas Japonesas</div>
+        </div>
+        <div class="theme-card" data-image="/img/fullscreen2.jpg">
+          <img src="/img/fullscreen2.jpg" alt="Tema 2">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Montanhas Épicas</div>
+        </div>
+        <div class="theme-card" data-image="/img/fullscreen3.jpg">
+          <img src="/img/fullscreen3.jpg" alt="Tema 3">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Praia ao Entardecer</div>
+        </div>
+        <div class="theme-card" data-image="/img/fullscreen4.jpg">
+          <img src="/img/fullscreen4.jpg" alt="Tema 4">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Lago Frio</div>
+        </div>
+        <div class="theme-card" data-image="/img/fullscreen5.jpg">
+          <img src="/img/fullscreen5.jpg" alt="Tema 5">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Lago ao Entardecer</div>
+        </div>
+        <div class="theme-card" data-image="/img/fullscreen6.jpg">
+          <img src="/img/fullscreen6.jpg" alt="Tema 6">
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Paisagem Natural</div>
+        </div>
+      </div>
+      <div class="themes-grid">
+        <div class="theme-card" data-image="none">
+          <div class="theme-placeholder"></div>
+          <div class="theme-overlay"></div>
+          <div class="theme-label">Remover Tema</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { EmojiButton } from "https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.4/dist/index.js";
+
+    const input = document.querySelector("#input");
+    const emojiToggle = document.querySelector("#emoji-toggle");
+
+    const picker = new EmojiButton({ theme: "dark" });
+
+    // Mostra o painel ao clicar no botão
+    emojiToggle.addEventListener("click", () => picker.togglePicker(emojiToggle));
+
+    // Insere o emoji no input
+    picker.on("emoji", (emoji) => {
+      input.value += emoji.emoji;
+      input.focus();
+    });
+  </script>
+
+  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
