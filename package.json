@@ -1,6 +1,7 @@
 {
   "name": "projeto2",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "node index.js",
