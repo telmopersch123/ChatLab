@@ -1,6 +1,6 @@
 # 💬 ChatLab
 
-![ChatLab Banner](https://img.shields.io/badge/ChatLab-RealTimeChat-brightgreen)
+![ChatLab Banner]((http://56.124.88.223:3000/))
 
 ChatLab é um **chat em tempo real** construído com Node.js e Socket.io, projetado para oferecer comunicação instantânea, suporte a **emojis**, **imagens** e **vídeos**, e técnicas avançadas de **otimização de mídia** para melhorar a experiência do usuário.  
 
